@@ -1,13 +1,15 @@
-
+/*
+ * still working on it....
+ * some things needs to be changed.
+ */
 public class Singlylinkedlist {
 
-	private static int counter;
+	private int counter;
 	private Node head;
+	
 
 	// Default constructor
 	public Singlylinkedlist() {}
-	
-	
 	
 	// appends the specified element to the end of this list.
 	public void add(Object data) {
@@ -30,12 +32,10 @@ public class Singlylinkedlist {
 			linkedLstCurr.setNext(crunchifyTemp);
 		}
 		// increment the number of elements variable
-		incrementCounter();
+		counter++;
 	}
 
-	private static int getCounter() { return counter;}
-	private static void incrementCounter() {counter++;}
-	private void decrementCounter() {counter--;}
+	private int getCounter() { return counter;}
 
 	// inserts the specified element at the specified position in this list
 	public void add(Object data, int index) {
@@ -57,7 +57,7 @@ public class Singlylinkedlist {
 		linkedLstCurr.setNext(crunchifyTemp);
 
 		// increment the number of elements variable
-		incrementCounter();
+		counter++;
 	}
 
 	public Object get(int index)
@@ -98,7 +98,7 @@ public class Singlylinkedlist {
 			linkedLstCurr.setNext(linkedLstCurr.getNext().getNext());
 
 			// decrement the number of elements variable
-			decrementCounter();
+			counter--;
 			return true;
 		}
 		return false;
@@ -125,23 +125,22 @@ public class Singlylinkedlist {
 		// reference to the next node in the chain, or null if there isn't one.
 		private Node next;
 
-		// data carried by this node. could be of any type you need.
+		// Data carried by this node. could be of any type we need.
 		Object data;
 
 		// Node constructor
 		public Node(Object dataValue) {
-			next = null;
 			data = dataValue;
+			next = null;
 		}
 
-		// another Node constructor if we want to specify the node to point to.
+		// Another Node constructor if we want to specify the node to point to.
 		@SuppressWarnings("unused")
 		public Node(Object dataValue, Node nextValue) {
 			next = nextValue;
 			data = dataValue;
 		}
 
-		// these methods should be self-explanatory
 		public Object getData() {
 			return data;
 		}
